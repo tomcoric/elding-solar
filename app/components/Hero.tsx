@@ -69,16 +69,16 @@ export default function Hero() {
                 <div className="logo-flicker absolute inset-0" />
               </div>
 
-              {/* Stat kartice na čoškovima */}
-              <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
+              {/* Stat kartice na rubovima */}
+              <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
                 <div className="text-blue-400 font-bold text-xl">30+</div>
                 <div className="text-slate-400 text-xs">Projekata</div>
               </div>
-              <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
+              <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
                 <div className="text-blue-400 font-bold text-xl">100%</div>
                 <div className="text-slate-400 text-xs">Zadovoljstvo</div>
               </div>
-              <div className="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 shadow-xl text-center">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 shadow-xl text-center">
                 <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
                 <div className="text-slate-400 text-xs">Prosj. instalacija</div>
               </div>
