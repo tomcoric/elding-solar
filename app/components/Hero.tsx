@@ -59,16 +59,16 @@ export default function Hero() {
           <div className="hidden lg:flex justify-center items-center">
             <div className="relative">
               {/* Outer glow ring */}
-              <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-pulse-ring scale-125" />
+              <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
 
               {/* Logo showcase */}
-              <div className="relative w-80 h-80 animate-float">
-                <div className="logo-frame absolute inset-0 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
+              <div className="relative w-80 animate-float">
+                <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/elding_projekti.jpeg"
                     alt="ELDING projekt d.o.o. logo"
-                    className="logo-img absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-auto block"
                   />
                   {/* Lightning flicker overlay */}
                   <div className="logo-flicker absolute inset-0" />
