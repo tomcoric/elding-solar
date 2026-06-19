@@ -92,7 +92,7 @@ export default function Contact() {
             <div className="mt-10 flex items-center gap-4">
               <span className="text-slate-500 text-sm">Pratite nas:</span>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61572996150902"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-slate-100 hover:bg-blue-600 text-slate-600 hover:text-white rounded-lg flex items-center justify-center transition-all"
