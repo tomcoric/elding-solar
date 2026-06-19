@@ -56,8 +56,8 @@ export default function Hero() {
           </div>
 
           {/* Visual element */}
-          <div className="hidden lg:flex justify-center items-center px-10">
-            <div className="relative w-full animate-float">
+          <div className="hidden lg:flex justify-center items-center px-6">
+            <div className="relative w-full max-w-lg mx-auto animate-float">
               <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
               <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
