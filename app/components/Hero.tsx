@@ -57,12 +57,10 @@ export default function Hero() {
 
           {/* Visual element */}
           <div className="hidden lg:flex justify-center items-center">
-            <div className="relative w-full px-14">
-              {/* Outer glow ring */}
-              <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
-
-              {/* Logo showcase */}
-              <div className="relative w-full animate-float">
+            <div className="w-full space-y-4">
+              {/* Logo showcase — clean, no overlays */}
+              <div className="relative animate-float">
+                <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
                 <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -70,32 +68,28 @@ export default function Hero() {
                     alt="ELDING projekt d.o.o. logo"
                     className="w-full h-auto block"
                   />
-                  {/* Lightning flicker overlay */}
                   <div className="logo-flicker absolute inset-0" />
-
-                  {/* Energy output badge */}
-                  <div className="absolute bottom-4 right-4 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3">
-                    <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
-                    <div className="text-slate-400 text-xs">Prosječna instalacija</div>
-                  </div>
-
-                  {/* Live badge */}
-                  <div className="absolute top-4 left-4 flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-3 py-1.5">
-                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                    <span className="text-emerald-400 text-xs font-medium">Aktivno</span>
-                  </div>
                 </div>
               </div>
 
-              {/* Floating stat cards */}
-              <div className="absolute -left-12 top-1/4 bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl">
-                <div className="text-blue-400 font-bold text-xl">30+</div>
-                <div className="text-slate-400 text-xs">Projekata</div>
-              </div>
-
-              <div className="absolute -right-12 bottom-1/4 bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl">
-                <div className="text-blue-400 font-bold text-xl">100%</div>
-                <div className="text-slate-400 text-xs">Zadovoljstvo</div>
+              {/* Stats ispod loga */}
+              <div className="grid grid-cols-4 gap-3">
+                <div className="bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 text-center shadow-xl">
+                  <div className="text-blue-400 font-bold text-xl">30+</div>
+                  <div className="text-slate-400 text-xs">Projekata</div>
+                </div>
+                <div className="bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 text-center shadow-xl">
+                  <div className="text-blue-400 font-bold text-xl">100%</div>
+                  <div className="text-slate-400 text-xs">Zadovoljstvo</div>
+                </div>
+                <div className="bg-slate-800/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 text-center shadow-xl">
+                  <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
+                  <div className="text-slate-400 text-xs">Prosj. instalacija</div>
+                </div>
+                <div className="flex flex-col items-center justify-center gap-1 bg-emerald-500/20 border border-emerald-500/30 rounded-xl p-3 shadow-xl">
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                  <span className="text-emerald-400 text-xs font-medium">Aktivno</span>
+                </div>
               </div>
             </div>
           </div>
