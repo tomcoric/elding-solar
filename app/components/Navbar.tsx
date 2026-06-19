@@ -30,11 +30,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-amber-500 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 bg-blue-500 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <SunIcon />
             </div>
             <span className="text-white font-bold text-lg tracking-tight">
-              ELDING<span className="text-amber-400 font-light"> projekt</span>
+              ELDING<span className="text-blue-400 font-light"> projekt</span>
             </span>
           </a>
 
@@ -44,10 +44,10 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-slate-300 hover:text-amber-400 text-sm font-medium transition-colors duration-200 relative group"
+                className="text-slate-300 hover:text-blue-400 text-sm font-medium transition-colors duration-200 relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a
@@ -76,7 +76,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 text-slate-300 hover:text-amber-400 hover:bg-white/5 rounded-lg text-sm font-medium transition-colors"
+                className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-white/5 rounded-lg text-sm font-medium transition-colors"
               >
                 {link.label}
               </a>

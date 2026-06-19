@@ -67,7 +67,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-amber-500 font-semibold text-sm uppercase tracking-widest">
+          <span className="text-blue-500 font-semibold text-sm uppercase tracking-widest">
             Naše prednosti
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
@@ -83,7 +83,7 @@ export default function WhyUs() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason) => (
             <div key={reason.title} className="flex gap-4">
-              <div className="flex-shrink-0 w-14 h-14 bg-amber-100 text-amber-500 rounded-xl flex items-center justify-center">
+              <div className="flex-shrink-0 w-14 h-14 bg-blue-100 text-blue-500 rounded-xl flex items-center justify-center">
                 {reason.icon}
               </div>
               <div>

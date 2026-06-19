@@ -51,7 +51,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left column */}
           <div>
-            <span className="text-amber-500 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-blue-500 font-semibold text-sm uppercase tracking-widest">
               Kontaktirajte nas
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
@@ -66,7 +66,7 @@ export default function Contact() {
             <div className="space-y-6">
               {contactItems.map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-amber-50 text-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     {item.icon}
                   </div>
                   <div>
@@ -74,7 +74,7 @@ export default function Contact() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-slate-900 font-semibold hover:text-amber-600 transition-colors"
+                        className="text-slate-900 font-semibold hover:text-blue-600 transition-colors"
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       >
@@ -148,7 +148,7 @@ function ContactForm() {
               name="name"
               required
               placeholder="Vaše ime"
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
           </div>
           <div>
@@ -159,7 +159,7 @@ function ContactForm() {
               type="tel"
               name="phone"
               placeholder="+385 xx xxx xxxx"
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
           </div>
         </div>
@@ -172,7 +172,7 @@ function ContactForm() {
             name="email"
             required
             placeholder="vas@email.com"
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
         <div>
@@ -181,7 +181,7 @@ function ContactForm() {
           </label>
           <select
             name="service"
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="">Odaberite uslugu...</option>
             <option>Solarna elektrana</option>
@@ -202,7 +202,7 @@ function ContactForm() {
             required
             rows={4}
             placeholder="Opišite vaš projekt ili postavljajte pitanja..."
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all resize-none"
+            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
           />
         </div>
         <button

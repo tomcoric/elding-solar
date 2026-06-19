@@ -5,8 +5,8 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 text-amber-400 text-sm font-medium">
-              <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2 text-blue-400 text-sm font-medium">
+              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
               Đakovo i šira okolica
             </div>
 
@@ -31,7 +31,7 @@ export default function Hero() {
               </a>
               <a
                 href="#usluge"
-                className="border border-white/20 hover:border-amber-400/50 text-white hover:text-amber-400 font-semibold px-8 py-4 rounded-full text-center text-base transition-all duration-300 hover:bg-amber-400/5"
+                className="border border-white/20 hover:border-blue-400/50 text-white hover:text-blue-400 font-semibold px-8 py-4 rounded-full text-center text-base transition-all duration-300 hover:bg-blue-400/5"
               >
                 Naše usluge →
               </a>
@@ -48,7 +48,7 @@ export default function Hero() {
                   key={badge.label}
                   className="flex items-center gap-2 text-slate-400 text-sm"
                 >
-                  <span className="text-amber-400 font-bold">{badge.icon}</span>
+                  <span className="text-blue-400 font-bold">{badge.icon}</span>
                   {badge.label}
                 </div>
               ))}
@@ -59,17 +59,23 @@ export default function Hero() {
           <div className="hidden lg:flex justify-center items-center">
             <div className="relative">
               {/* Outer glow ring */}
-              <div className="absolute inset-0 rounded-full bg-amber-500/10 animate-pulse-ring scale-125" />
+              <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-pulse-ring scale-125" />
 
-              {/* Solar illustration */}
+              {/* Logo showcase */}
               <div className="relative w-80 h-80 animate-float">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
-                  {/* Solar panel grid */}
-                  <SolarPanelIllustration />
+                <div className="logo-frame absolute inset-0 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/elding_projekti.jpeg"
+                    alt="ELDING projekt d.o.o. logo"
+                    className="logo-img absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Lightning flicker overlay */}
+                  <div className="logo-flicker absolute inset-0" />
 
                   {/* Energy output badge */}
-                  <div className="absolute bottom-4 right-4 bg-slate-900/90 backdrop-blur border border-amber-500/30 rounded-xl p-3">
-                    <div className="text-amber-400 font-bold text-lg">⚡ 8.5 kW</div>
+                  <div className="absolute bottom-4 right-4 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3">
+                    <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
                     <div className="text-slate-400 text-xs">Prosječna instalacija</div>
                   </div>
 
@@ -83,12 +89,12 @@ export default function Hero() {
 
               {/* Floating stat cards */}
               <div className="absolute -left-12 top-1/4 bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl">
-                <div className="text-amber-400 font-bold text-xl">30+</div>
+                <div className="text-blue-400 font-bold text-xl">30+</div>
                 <div className="text-slate-400 text-xs">Projekata</div>
               </div>
 
               <div className="absolute -right-12 bottom-1/4 bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl">
-                <div className="text-amber-400 font-bold text-xl">100%</div>
+                <div className="text-blue-400 font-bold text-xl">100%</div>
                 <div className="text-slate-400 text-xs">Zadovoljstvo</div>
               </div>
             </div>
@@ -99,34 +105,8 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500">
         <span className="text-xs tracking-widest uppercase">Skrolaj</span>
-        <div className="w-0.5 h-8 bg-gradient-to-b from-amber-500/50 to-transparent" />
+        <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500/50 to-transparent" />
       </div>
     </section>
-  );
-}
-
-function SolarPanelIllustration() {
-  const cells = Array.from({ length: 12 });
-  return (
-    <div className="absolute inset-0 p-6 grid grid-cols-3 grid-rows-4 gap-2">
-      {cells.map((_, i) => (
-        <div
-          key={i}
-          className="rounded bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/50 relative overflow-hidden"
-          style={{ opacity: 0.7 + (i % 3) * 0.1 }}
-        >
-          {/* Reflective sheen */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent" />
-          {/* Grid lines */}
-          <div className="absolute inset-1 grid grid-cols-2 grid-rows-3 gap-px">
-            {Array.from({ length: 6 }).map((_, j) => (
-              <div key={j} className="bg-slate-600/30 rounded-sm" />
-            ))}
-          </div>
-        </div>
-      ))}
-      {/* Sun rays overlay */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-amber-500/20 to-transparent rounded-bl-full" />
-    </div>
   );
 }

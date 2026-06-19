@@ -17,14 +17,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-1">
             <a href="#hero" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-amber-500 rounded-lg flex items-center justify-center">
+              <div className="w-9 h-9 bg-blue-500 rounded-lg flex items-center justify-center">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="4" />
                   <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
                 </svg>
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
-                ELDING<span className="text-amber-400 font-light"> projekt</span>
+                ELDING<span className="text-blue-400 font-light"> projekt</span>
               </span>
             </a>
             <p className="text-sm leading-relaxed max-w-xs">
@@ -36,7 +36,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61572996150902"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/5 hover:bg-amber-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
+                className="w-9 h-9 bg-white/5 hover:bg-blue-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function Footer() {
                 href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/5 hover:bg-amber-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
+                className="w-9 h-9 bg-white/5 hover:bg-blue-500 text-slate-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
@@ -69,7 +69,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm hover:text-amber-400 transition-colors"
+                    className="text-sm hover:text-blue-400 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -87,7 +87,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+385977885158"
-                  className="hover:text-amber-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   +385 97 788 51 58
                 </a>
@@ -95,7 +95,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:elding.projekt@gmail.com"
-                  className="hover:text-amber-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   elding.projekt@gmail.com
                 </a>

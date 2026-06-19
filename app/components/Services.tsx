@@ -80,7 +80,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-amber-500 font-semibold text-sm uppercase tracking-widest">
+          <span className="text-blue-500 font-semibold text-sm uppercase tracking-widest">
             Što radimo
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
@@ -98,19 +98,19 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="service-card group bg-white border border-slate-100 rounded-2xl p-6 hover:border-amber-200 shadow-sm"
+              className="service-card group bg-white border border-slate-100 rounded-2xl p-6 hover:border-blue-200 shadow-sm"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-14 h-14 bg-amber-50 group-hover:bg-amber-100 rounded-xl flex items-center justify-center text-amber-500 transition-colors">
+                <div className="w-14 h-14 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center text-blue-500 transition-colors">
                   {service.icon}
                 </div>
                 {service.tag && (
-                  <span className="text-xs font-semibold bg-amber-100 text-amber-700 px-3 py-1 rounded-full">
+                  <span className="text-xs font-semibold bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
                     {service.tag}
                   </span>
                 )}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                 {service.title}
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">

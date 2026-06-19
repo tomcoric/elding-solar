@@ -7,7 +7,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-20 bg-amber-500 relative overflow-hidden">
+    <section className="py-20 bg-blue-500 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
@@ -22,7 +22,7 @@ export default function Stats() {
               <div className="text-4xl sm:text-5xl font-bold text-white mb-2">
                 {stat.value}
               </div>
-              <div className="text-amber-900 font-medium text-sm sm:text-base">
+              <div className="text-blue-900 font-medium text-sm sm:text-base">
                 {stat.label}
               </div>
             </div>
