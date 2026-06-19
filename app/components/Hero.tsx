@@ -57,38 +57,30 @@ export default function Hero() {
 
           {/* Visual element */}
           <div className="hidden lg:flex justify-center items-center">
-            <div className="w-full space-y-4">
-              {/* Logo showcase — clean, no overlays */}
-              <div className="relative animate-float">
-                <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
-                <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/elding_projekti.jpeg"
-                    alt="ELDING projekt d.o.o. logo"
-                    className="w-full h-auto block"
-                  />
-                  <div className="logo-flicker absolute inset-0" />
-                </div>
+            <div className="relative w-full animate-float">
+              <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
+              <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/elding_projekti.jpeg"
+                  alt="ELDING projekt d.o.o. logo"
+                  className="w-full h-auto block"
+                />
+                <div className="logo-flicker absolute inset-0" />
               </div>
 
-              {/* Stats ispod loga */}
-              <div className="flex justify-center gap-3">
-                <div className="bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 text-center shadow-xl">
-                  <div className="text-blue-400 font-bold text-xl">30+</div>
-                  <div className="text-slate-400 text-xs">Projekata</div>
-                </div>
-                <div className="bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 text-center shadow-xl">
-                  <div className="text-blue-400 font-bold text-xl">100%</div>
-                  <div className="text-slate-400 text-xs">Zadovoljstvo</div>
-                </div>
-                <div className="bg-slate-800/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 text-center shadow-xl">
-                  <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
-                  <div className="text-slate-400 text-xs">Prosj. instalacija</div>
-                </div>
-                <div className="flex flex-col items-center justify-center gap-1 bg-emerald-500/20 border border-emerald-500/30 rounded-xl p-3 shadow-xl">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                </div>
+              {/* Stat kartice na čoškovima */}
+              <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
+                <div className="text-blue-400 font-bold text-xl">30+</div>
+                <div className="text-slate-400 text-xs">Projekata</div>
+              </div>
+              <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
+                <div className="text-blue-400 font-bold text-xl">100%</div>
+                <div className="text-slate-400 text-xs">Zadovoljstvo</div>
+              </div>
+              <div className="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 shadow-xl text-center">
+                <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
+                <div className="text-slate-400 text-xs">Prosj. instalacija</div>
               </div>
             </div>
           </div>
