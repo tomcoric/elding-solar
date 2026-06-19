@@ -57,12 +57,12 @@ export default function Hero() {
 
           {/* Visual element */}
           <div className="hidden lg:flex justify-center items-center">
-            <div className="relative">
+            <div className="relative w-full px-14">
               {/* Outer glow ring */}
               <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
 
               {/* Logo showcase */}
-              <div className="relative w-80 animate-float">
+              <div className="relative w-full animate-float">
                 <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
