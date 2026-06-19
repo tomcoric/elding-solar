@@ -73,7 +73,7 @@ export default function Hero() {
               </div>
 
               {/* Stats ispod loga */}
-              <div className="grid grid-cols-4 gap-3">
+              <div className="flex justify-center gap-3">
                 <div className="bg-slate-800/90 backdrop-blur border border-white/10 rounded-xl p-3 text-center shadow-xl">
                   <div className="text-blue-400 font-bold text-xl">30+</div>
                   <div className="text-slate-400 text-xs">Projekata</div>
@@ -88,7 +88,6 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1 bg-emerald-500/20 border border-emerald-500/30 rounded-xl p-3 shadow-xl">
                   <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                  <span className="text-emerald-400 text-xs font-medium">Aktivno</span>
                 </div>
               </div>
             </div>
