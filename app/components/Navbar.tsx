@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "#usluge", label: "Usluge" },
@@ -68,30 +69,49 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10 py-4 px-2 space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-white/5 rounded-lg text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="pt-2 px-4">
-              <a
-                href="#kontakt"
-                onClick={() => setMenuOpen(false)}
-                className="btn-primary block text-center text-white text-sm font-semibold px-5 py-3 rounded-full"
-              >
-                Besplatna konzultacija
-              </a>
-            </div>
-          </div>
-        )}
+        {/* Mobile menu — animirani slide-down */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden overflow-hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10"
+            >
+              <div className="py-4 px-2 space-y-1">
+                {navLinks.map((link, i) => (
+                  <motion.a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05, duration: 0.2 }}
+                    className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-white/5 rounded-lg text-sm font-medium transition-colors"
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+                <motion.div
+                  className="pt-2 px-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: navLinks.length * 0.05 + 0.05 }}
+                >
+                  <a
+                    href="#kontakt"
+                    onClick={() => setMenuOpen(false)}
+                    className="btn-primary block text-center text-white text-sm font-semibold px-5 py-3 rounded-full"
+                  >
+                    Besplatna konzultacija
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );

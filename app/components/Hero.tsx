@@ -1,28 +1,48 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer, viewportOptions } from "../lib/animations";
+
 export default function Hero() {
   return (
     <section id="hero" className="hero-bg min-h-screen flex items-center relative">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+
           {/* Text content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2 text-blue-400 text-sm font-medium">
+          <motion.div
+            className="space-y-8"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              variants={fadeUp}
+              className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2 text-blue-400 text-sm font-medium"
+            >
               <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
               Đakovo i šira okolica
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
+            >
               Energija sunca{" "}
               <span className="text-gradient block">za vašu kuću</span>
               i tvrtku
-            </h1>
+            </motion.h1>
 
-            <p className="text-slate-300 text-lg leading-relaxed max-w-lg">
+            <motion.p
+              variants={fadeUp}
+              className="text-slate-300 text-lg leading-relaxed max-w-lg"
+            >
               ELDING projekt d.o.o. projektira i instalira solarne elektrane,
               nudi energetske audite i pruža stručnu podršku za EU fondove.
               Pouzdanost i preciznost u svakom projektu.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#kontakt"
                 className="btn-primary text-white font-semibold px-8 py-4 rounded-full text-center text-base"
@@ -35,28 +55,33 @@ export default function Hero() {
               >
                 Naše usluge →
               </a>
-            </div>
+            </motion.div>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-6 pt-4">
+            <motion.div variants={staggerContainer} className="flex flex-wrap gap-6 pt-4">
               {[
                 { label: "Certificirani stručnjaci", icon: "✓" },
                 { label: "EU fondovi", icon: "✓" },
                 { label: "Garancija kvalitete", icon: "✓" },
               ].map((badge) => (
-                <div
+                <motion.div
                   key={badge.label}
+                  variants={fadeUp}
                   className="flex items-center gap-2 text-slate-400 text-sm"
                 >
                   <span className="text-blue-400 font-bold">{badge.icon}</span>
                   {badge.label}
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Visual element */}
-          <div className="hidden lg:flex justify-center items-center px-6">
+          <motion.div
+            className="hidden lg:flex justify-center items-center px-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="relative w-full max-w-lg mx-auto animate-float">
               <div className="absolute inset-0 rounded-2xl bg-blue-500/10 animate-pulse-ring scale-105" />
               <div className="logo-frame relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 shadow-2xl overflow-hidden">
@@ -69,29 +94,49 @@ export default function Hero() {
                 <div className="logo-flicker absolute inset-0" />
               </div>
 
-              {/* Stat kartice na rubovima */}
-              <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
+              <motion.div
+                className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="text-blue-400 font-bold text-xl">30+</div>
                 <div className="text-slate-400 text-xs">Projekata</div>
-              </div>
-              <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center">
+              </motion.div>
+
+              <motion.div
+                className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-slate-900/90 backdrop-blur border border-white/10 rounded-xl p-3 shadow-xl text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.85, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="text-blue-400 font-bold text-xl">100%</div>
                 <div className="text-slate-400 text-xs">Zadovoljstvo</div>
-              </div>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 shadow-xl text-center">
+              </motion.div>
+
+              <motion.div
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-slate-900/90 backdrop-blur border border-blue-400/30 rounded-xl p-3 shadow-xl text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.0, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="text-blue-400 font-bold text-lg">⚡ 8.5 kW</div>
                 <div className="text-slate-400 text-xs">Prosj. instalacija</div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500">
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+      >
         <span className="text-xs tracking-widest uppercase">Skrolaj</span>
         <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500/50 to-transparent" />
-      </div>
+      </motion.div>
     </section>
   );
 }
