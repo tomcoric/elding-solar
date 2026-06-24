@@ -1,11 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewportOptions } from "../lib/animations";
+import { fadeUp, staggerContainer } from "../lib/animations";
 
 export default function Hero() {
   return (
     <section id="hero" className="hero-bg min-h-screen flex items-center relative">
+
+      {/* ── Lightning bolt decorations ── */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none" aria-hidden>
+        {/* Large bolt — top right */}
+        <svg className="absolute top-16 right-12 lightning-bolt opacity-[0.06]" width="90" height="140" viewBox="0 0 90 140" fill="none">
+          <path d="M55 0 L20 75 L45 75 L10 140 L75 55 L45 55 Z" fill="#38bdf8" />
+        </svg>
+        {/* Medium bolt — mid left */}
+        <svg className="absolute top-1/3 left-8 lightning-bolt-2 opacity-[0.05]" width="55" height="88" viewBox="0 0 55 88" fill="none">
+          <path d="M34 0 L12 47 L28 47 L6 88 L46 34 L28 34 Z" fill="#7dd3fc" />
+        </svg>
+        {/* Small bolt — bottom right */}
+        <svg className="absolute bottom-28 right-1/4 lightning-bolt-3 opacity-[0.05]" width="38" height="60" viewBox="0 0 38 60" fill="none">
+          <path d="M23 0 L8 32 L19 32 L4 60 L32 23 L19 23 Z" fill="#38bdf8" />
+        </svg>
+        {/* Spark dots */}
+        <div className="absolute top-24 left-1/3 w-1.5 h-1.5 rounded-full bg-blue-400/30 lightning-bolt" />
+        <div className="absolute top-1/2 right-1/3 w-1 h-1 rounded-full bg-sky-300/30 lightning-bolt-2" />
+        <div className="absolute bottom-1/3 left-1/4 w-1 h-1 rounded-full bg-blue-300/25 lightning-bolt-3" />
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -45,7 +66,7 @@ export default function Hero() {
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#kontakt"
-                className="btn-primary text-white font-semibold px-8 py-4 rounded-full text-center text-base"
+                className="btn-primary btn-primary-electric text-white font-semibold px-8 py-4 rounded-full text-center text-base"
               >
                 Zatražite besplatnu ponudu
               </a>
