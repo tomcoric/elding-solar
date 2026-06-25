@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 const contactItems = [
   {
     icon: (
@@ -126,63 +130,98 @@ export default function Contact() {
   );
 }
 
+const INPUT_CLASS =
+  'w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all';
+
 function ContactForm() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    const formData = new FormData(e.currentTarget);
+    formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? '');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      setStatus(data.success ? 'success' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'success') {
+    return (
+      <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 flex flex-col items-center justify-center min-h-[400px] text-center">
+        <div className="text-5xl mb-4">✅</div>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">Upit je poslan!</h3>
+        <p className="text-slate-600 mb-6">Odgovorit ćemo u roku od 24 sata radnim danom.</p>
+        <button
+          onClick={() => setStatus('idle')}
+          className="text-blue-500 hover:text-blue-700 text-sm font-medium transition-colors"
+        >
+          Pošaljite novi upit
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-      <h3 className="text-xl font-bold text-slate-900 mb-6">
-        Pošaljite upit
-      </h3>
-      <form
-        action="mailto:elding.projekt@gmail.com"
-        method="get"
-        encType="text/plain"
-        className="space-y-5"
-      >
+      <h3 className="text-xl font-bold text-slate-900 mb-6">Pošaljite upit</h3>
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
               Ime i prezime *
             </label>
             <input
+              id="name"
               type="text"
               name="name"
               required
               placeholder="Vaše ime"
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className={INPUT_CLASS}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
               Telefon
             </label>
             <input
+              id="phone"
               type="tel"
               name="phone"
               placeholder="+385 xx xxx xxxx"
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className={INPUT_CLASS}
             />
           </div>
         </div>
+
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
             E-mail *
           </label>
           <input
+            id="email"
             type="email"
             name="email"
             required
             placeholder="vas@email.com"
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className={INPUT_CLASS}
           />
         </div>
+
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">
             Vrsta usluge
           </label>
-          <select
-            name="service"
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-          >
+          <select id="service" name="service" className={INPUT_CLASS}>
             <option value="">Odaberite uslugu...</option>
             <option>Solarna elektrana</option>
             <option>Elektroprojektiranje</option>
@@ -193,24 +232,45 @@ function ContactForm() {
             <option>Ostalo</option>
           </select>
         </div>
+
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
             Poruka *
           </label>
           <textarea
-            name="body"
+            id="message"
+            name="message"
             required
             rows={4}
             placeholder="Opišite vaš projekt ili postavljajte pitanja..."
-            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+            className={`${INPUT_CLASS} resize-none`}
           />
         </div>
+
+        {status === 'error' && (
+          <p className="text-red-500 text-sm text-center">
+            Greška pri slanju. Pokušajte ponovo ili nas nazovite na{' '}
+            <a href="tel:+38597788 5158" className="font-medium underline">
+              +385 97 788 51 58
+            </a>.
+          </p>
+        )}
+
         <button
           type="submit"
-          className="btn-primary w-full text-white font-semibold py-4 rounded-xl text-base"
+          disabled={status === 'sending'}
+          className="btn-primary w-full text-white font-semibold py-4 rounded-xl text-base disabled:opacity-60 flex items-center justify-center gap-2"
         >
-          Pošaljite upit
+          {status === 'sending' ? (
+            <>
+              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Šalje se...
+            </>
+          ) : (
+            'Pošaljite upit'
+          )}
         </button>
+
         <p className="text-slate-500 text-xs text-center">
           Odgovaramo u roku od 24 sata radnim danom.
         </p>

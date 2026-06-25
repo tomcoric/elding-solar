@@ -15,7 +15,7 @@ const localBusinessSchema = {
   description:
     "Projektiranje i ugradnja solarnih elektrana, elektroprojektiranje, energetski auditi i konzultacije za EU fondove.",
   url: "https://elding-solar.vercel.app",
-  telephone: "+385",
+  telephone: "+38597788 5158",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Đakovo",
