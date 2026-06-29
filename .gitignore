@@ -36,8 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# automation scripts
+push-now.bat
+auto-push-watcher.*
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# secrets
+.github_token
